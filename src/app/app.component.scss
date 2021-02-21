@@ -46,3 +46,9 @@ textarea:focus {
   padding: 0;
   margin: 0;
 }
+
+.image-container {
+  img {
+    max-width: calc(95vw - 60px);
+  }
+}

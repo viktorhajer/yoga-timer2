@@ -40,8 +40,9 @@ const ASANA: TaskSequence = {
       repetition: '10-10 légzésig',
       imgSrc: 'maricsjaszana.jpg'
     },{
-      title: 'xKhatu Pranam',
-      repetition: '1-1 kör mindkét oldalra'
+      title: 'Khatu Pranam',
+      repetition: '1-1 kör mindkét oldalra',
+      imgSrc: 'jme.jpg'
     },{
       title: 'Adho Mukha Svanászana (kutyapóz)',
       description: `10 légzésig tartani, majd előre lépsz az egyik lábbal és felállsz álló helyzetbe. Vidd a súlypontot a lábak felé, sarkakat nyújtsd a talaj felé, amivel fokozod a lábak nyújtását.`,
