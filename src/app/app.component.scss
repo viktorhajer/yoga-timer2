@@ -1,0 +1,48 @@
+.menu {
+  // position: sticky;
+  // top: 0;
+  // z-index: 100;
+  background: black;
+
+
+  .main-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .step-control {
+    
+      .mat-button-base {
+        margin: 8px 8px 8px 0;
+      }
+    }
+
+    h3 {
+      padding: 0;
+      margin: 0 0 0 20px;
+    }
+  }
+}
+
+
+textarea {
+  margin: 0px;
+  width: 100%;
+  background: no-repeat;
+  font: 400 12px/20px Roboto, "Helvetica Neue", sans-serif;
+  border: none;
+  color: #bdbdbd;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none !important;
+  border: none;
+}
+
+.repetition {
+  color: white;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
