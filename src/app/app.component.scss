@@ -11,7 +11,7 @@
     align-items: center;
 
     .step-control {
-    
+
       .mat-button-base {
         margin: 8px 8px 8px 0;
       }
@@ -50,5 +50,7 @@ textarea:focus {
 .image-container {
   img {
     max-width: calc(95vw - 60px);
+    border: 1px solid #888;
+    padding: 3px;
   }
 }
