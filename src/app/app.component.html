@@ -1,33 +1,52 @@
 <div class="page-content">
 
-  <div class="menu">
+  <audio #tempoElement src="assets/sound/cell-phone-beep.mp3"></audio>
+
+  <header>
     <div class="main-title">
       <h3>{{ sequence.title }}</h3>
       <div class="step-control">
         <button mat-mini-fab (click)="stepper.previous()" [disabled]="stepper.selectedIndex === 0" color="primary">
           <mat-icon>navigate_before</mat-icon>
         </button>
-        <button mat-mini-fab (click)="stepper.next()" [disabled]="stepper.selectedIndex === (sequence.tasks.length - 1)" color="primary">
-          <mat-icon>navigate_next</mat-icon>
-        </button>
-        <button mat-mini-fab (click)="previousSequence()" color="primary">
-          <mat-icon>navigate_before</mat-icon>
-        </button>
-        <button mat-mini-fab (click)="nextSequence()" color="primary">
+        <button mat-mini-fab (click)="stepper.next()" [disabled]="stepper.selectedIndex === (sequence.tasks.length - 1)"
+                color="primary">
           <mat-icon>navigate_next</mat-icon>
         </button>
       </div>
     </div>
-
-    <mat-progress-bar mode="determinate" value="{{ getProgress(stepper.selectedIndex) }}" ></mat-progress-bar>
-  </div>
+    <mat-progress-bar mode="determinate" value="{{ getProgress(stepper.selectedIndex) }}"></mat-progress-bar>
+  </header>
 
   <mat-vertical-stepper #stepper [appStepperScroll]="stepper.selectedIndex">
     <mat-step *ngFor="let task of sequence.tasks; index as i;" [completed]="false">
       <ng-template matStepLabel>{{ task.title }}</ng-template>
       <p class="repetition" *ngIf="task.repetition">{{ task.repetition }}</p>
       <textarea appAutoResize *ngIf="task.description">{{ task.description }}</textarea>
-      <div class="image-container"><img *ngIf="task.imgSrc" src="assets/img/{{ task.imgSrc }}" /></div>
+      <div class="image-container"><img *ngIf="task.imgSrc" src="assets/img/{{ task.imgSrc }}"/></div>
     </mat-step>
   </mat-vertical-stepper>
+
+  <footer>
+    <div class="step-control">
+      <button mat-raised-button color="{{tempo ? 'primary' : 'accent'}}" (click)="toggleTempo()">Tempo</button>
+      <button mat-raised-button color="{{countDownTimer ? 'primary' : 'accent'}}"
+              *ngIf="!countDownTimer || countDownLimit === 120" (click)="toggleCountDown(120)">
+        {{ getFormattedCountDown(120) }}
+      </button>
+      <button mat-raised-button color="{{countDownTimer ? 'primary' : 'accent'}}"
+              *ngIf="!countDownTimer || countDownLimit === 180" (click)="toggleCountDown(180)">
+        {{ getFormattedCountDown(180) }}
+      </button>
+      <button mat-raised-button color="{{countDownTimer ? 'primary' : 'accent'}}"
+              *ngIf="!countDownTimer || countDownLimit === 300" (click)="toggleCountDown(300)">
+        {{ getFormattedCountDown(300) }}
+      </button>
+    </div>
+    <div class="step-control">
+      <button mat-raised-button (click)="previousSequence()" color="primary">Previous</button>
+      <button mat-raised-button (click)="nextSequence()" color="primary">Next</button>
+    </div>
+  </footer>
+
 </div>

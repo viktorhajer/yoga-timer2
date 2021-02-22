@@ -1,21 +1,10 @@
-.menu {
-  // position: sticky;
-  // top: 0;
-  // z-index: 100;
-  background: black;
-
+header {
+  background: #000000;
 
   .main-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    .step-control {
-
-      .mat-button-base {
-        margin: 8px 8px 8px 0;
-      }
-    }
 
     h3 {
       padding: 0;
@@ -24,6 +13,27 @@
   }
 }
 
+footer {
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
+  background: #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .mat-button-base {
+    margin: 4px;
+    padding: 0 6px;
+    min-width: auto;
+  }
+}
 
 textarea {
   margin: 0px;

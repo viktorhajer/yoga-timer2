@@ -29,7 +29,7 @@ body {
 
   .mat-stepper-vertical {
     margin-top: 8px;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 110px);
     overflow: auto;
   }
 
@@ -43,5 +43,15 @@ body {
 
   .mat-step-header .mat-step-label.mat-step-label-selected {
     color: mat-color($basic, 100);
+  }
+
+  .step-control {
+    .mat-raised-button.mat-primary, .mat-raised-button.mat-accent {
+      font-size: 10px;
+      height: 25px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
   }
 }

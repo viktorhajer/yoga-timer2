@@ -1,4 +1,4 @@
-import { TaskSequence } from './task.sequence.model';
+import {TaskSequence} from './task.sequence.model';
 
 export class Sadhana {
   created: Date;
